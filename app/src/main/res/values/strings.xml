@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Login App</string>
+    <string name="sign_in">Sign In</string>
+    <string name="user">User</string>
+    <string name="password">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="incorrect_password">Incorrect password</string>
+    <string name="or_sign_in_with">or sign in with</string>
+    <string name="content_facebook_icon">Facebook icon</string>
+    <string name="content_google_icon">Google icon</string>
+    <string name="content_twitter_icon">Twitter icon</string>
+</resources>

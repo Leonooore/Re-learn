@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/viewTextSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_in"
+        android:textColor="@color/white"
+        android:textSize="@dimen/default_text_size"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/default_margin"
+        android:padding="@dimen/default_padding"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/viewEditTextLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#30ffffff"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="@dimen/text_size"
+        android:hint="@string/user"
+        android:inputType="textPersonName"
+        android:padding="@dimen/default_padding"
+        android:layout_margin="@dimen/small_margin"
+        app:layout_constraintTop_toBottomOf="@id/viewTextSignIn"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawablePadding="@dimen/default_padding"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/viewEditTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#30ffffff"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="@dimen/text_size"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:padding="@dimen/default_padding"
+        android:layout_margin="@dimen/small_margin"
+        app:layout_constraintTop_toBottomOf="@id/viewEditTextLogin"
+        android:drawableStart="@drawable/ic_baseline_vpn_key_24"
+        android:drawablePadding="@dimen/default_padding"
+        android:importantForAutofill="no" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:textSize="@dimen/sm_text_size"
+        android:backgroundTint="@color/design_default_color_secondary"
+        app:layout_constraintTop_toBottomOf="@id/viewEditTextPassword"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/small_margin"
+        android:paddingHorizontal="@dimen/btn_padding"/>
+
+    <TextView
+        android:id="@+id/viewIncorrectPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/incorrect_password"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sm_text_size"
+        android:layout_marginTop="@dimen/big_margin"
+        app:layout_constraintTop_toBottomOf="@id/buttonLogin"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/viewSocialMedia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/or_sign_in_with"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sm_text_size"
+        android:layout_marginBottom="@dimen/small_margin"
+        app:layout_constraintBottom_toTopOf="@id/layoutSocialMedia"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/layoutSocialMedia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="#30ffffff"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#30ffffff"
+            android:src="@drawable/fb"
+            android:layout_margin="@dimen/small_margin"
+            android:contentDescription="@string/content_facebook_icon" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#30ffffff"
+            android:src="@drawable/gg"
+            android:layout_margin="@dimen/small_margin"
+            android:contentDescription="@string/content_google_icon" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#30ffffff"
+            android:src="@drawable/tw"
+            android:layout_margin="@dimen/small_margin"
+            android:contentDescription="@string/content_twitter_icon" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
