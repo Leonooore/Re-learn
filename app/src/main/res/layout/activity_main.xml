@@ -68,18 +68,6 @@
         android:paddingHorizontal="@dimen/btn_padding"/>
 
     <TextView
-        android:id="@+id/viewIncorrectPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/incorrect_password"
-        android:textColor="@color/white"
-        android:textSize="@dimen/sm_text_size"
-        android:layout_marginTop="@dimen/big_margin"
-        app:layout_constraintTop_toBottomOf="@id/buttonLogin"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-    <TextView
         android:id="@+id/viewSocialMedia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

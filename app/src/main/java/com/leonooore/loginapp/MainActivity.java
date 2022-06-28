@@ -2,8 +2,8 @@ package com.leonooore.loginapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -11,7 +11,10 @@ import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String USER_ADMIN = "admin";
+    private String enteredName;
+    private String enteredPassword;
+
+    public static final String USER_ADMIN = "Admin";
     public static final String PASSWORD_ADMIN = "123123";
 
     @Override
@@ -22,15 +25,18 @@ public class MainActivity extends AppCompatActivity {
         TextView user = findViewById(R.id.viewEditTextLogin);
         TextView password = findViewById(R.id.viewEditTextPassword);
 
-        MaterialButton login = findViewById(R.id.buttonLogin);
+        MaterialButton button = findViewById(R.id.buttonLogin);
 
-        login.setOnClickListener(view -> {
-            if(user.getText().toString().equals(USER_ADMIN) && password.getText().toString().equals(PASSWORD_ADMIN)) {
-                //correct
-                Toast.makeText(MainActivity.this, "Successful", Toast.LENGTH_SHORT).show();
+        button.setOnClickListener(view -> {
+            enteredName = user.getText().toString();
+            enteredPassword =  password.getText().toString();
+
+            Intent intent = new Intent(this, SecondActivity.class).putExtra("USER_NAME",enteredName);
+
+            if(enteredName.equals(USER_ADMIN) && enteredPassword.equals(PASSWORD_ADMIN)) {
+                startActivity(intent);
             } else
-                //incorrect
-                Toast.makeText(MainActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Failed, try again or sign with social media", Toast.LENGTH_SHORT).show();
         });
 
     }
