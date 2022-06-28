@@ -68,18 +68,6 @@
         android:paddingHorizontal="@dimen/btn_padding"/>
 
     <TextView
-        android:id="@+id/viewIncorrectPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/incorrect_password"
-        android:textColor="@color/white"
-        android:textSize="@dimen/sm_text_size"
-        android:layout_marginTop="@dimen/big_margin"
-        app:layout_constraintTop_toBottomOf="@id/buttonLogin"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-    <TextView
         android:id="@+id/viewSocialMedia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -87,11 +75,21 @@
         android:textColor="@color/white"
         android:textSize="@dimen/sm_text_size"
         android:layout_marginBottom="@dimen/small_margin"
-        app:layout_constraintBottom_toTopOf="@id/layoutSocialMedia"
+        app:layout_constraintBottom_toTopOf="@id/login_button"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
 
-    <LinearLayout
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginBottom="@dimen/default_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <!-- <LinearLayout
         android:id="@+id/layoutSocialMedia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -102,29 +100,29 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#30ffffff"
-            android:src="@drawable/fb"
-            android:layout_margin="@dimen/small_margin"
-            android:contentDescription="@string/content_facebook_icon" />
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="#30ffffff"
+             android:src="@drawable/fb"
+             android:layout_margin="@dimen/small_margin"
+             android:contentDescription="@string/content_facebook_icon" />
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#30ffffff"
-            android:src="@drawable/gg"
-            android:layout_margin="@dimen/small_margin"
-            android:contentDescription="@string/content_google_icon" />
+          <ImageButton
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="#30ffffff"
+              android:src="@drawable/gg"
+              android:layout_margin="@dimen/small_margin"
+              android:contentDescription="@string/content_google_icon" />
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#30ffffff"
-            android:src="@drawable/tw"
-            android:layout_margin="@dimen/small_margin"
-            android:contentDescription="@string/content_twitter_icon" />
+          <ImageButton
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="#30ffffff"
+              android:src="@drawable/tw"
+              android:layout_margin="@dimen/small_margin"
+              android:contentDescription="@string/content_twitter_icon" />
 
-    </LinearLayout>
+    </LinearLayout> -->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+ </androidx.constraintlayout.widget.ConstraintLayout>

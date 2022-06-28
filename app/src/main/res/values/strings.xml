@@ -4,9 +4,13 @@
     <string name="user">User</string>
     <string name="password">Password</string>
     <string name="login">LOGIN</string>
-    <string name="incorrect_password">Incorrect password</string>
-    <string name="or_sign_in_with">or sign in with</string>
+    <string name="or_sign_in_with">or</string>
     <string name="content_facebook_icon">Facebook icon</string>
     <string name="content_google_icon">Google icon</string>
     <string name="content_twitter_icon">Twitter icon</string>
+    <string name="hello">Hello!</string>
+    <string name="second_activity_label">Second Activity</string>
+    <string name="facebook_app_id">1234</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">56789</string>
 </resources>
