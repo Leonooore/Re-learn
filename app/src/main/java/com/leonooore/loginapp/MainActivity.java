@@ -10,11 +10,9 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
-import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.material.button.MaterialButton;
@@ -34,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String EMAIL = "email";
 
+    private Intent intent;
+
     private CallbackManager callbackManager;
 
     @Override
@@ -50,10 +50,11 @@ public class MainActivity extends AppCompatActivity {
             enteredName = user.getText().toString();
             enteredPassword =  password.getText().toString();
 
-            Intent intent = new Intent(this, SecondActivity.class).putExtra("USER_NAME",enteredName);
+            intent = new Intent(this, SecondActivity.class).putExtra("USER_NAME",enteredName);
 
             if(enteredName.equals(USER_ADMIN) && enteredPassword.equals(PASSWORD_ADMIN)) {
                 startActivity(intent);
+                finish();
             } else
                 Toast.makeText(this, "Failed, try again or sign with social media", Toast.LENGTH_SHORT).show();
         });
@@ -72,10 +73,11 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setReadPermissions(Collections.singletonList(EMAIL));
 
         // Callback registration
-        /*loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                Log.d("SUCCESS", "Success");
+                startActivity(new Intent(MainActivity.this, SecondActivity.class));
+                finish();
             }
 
             @Override
@@ -87,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             public void onError(@NonNull FacebookException exception) {
                 Log.d("ERROR", exception.getMessage());
             }
-        });*/
+        });
     }
 
     @Override
