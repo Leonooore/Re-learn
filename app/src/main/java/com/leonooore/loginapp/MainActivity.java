@@ -58,6 +58,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Failed, try again or sign with social media", Toast.LENGTH_SHORT).show();
         });
 
+        initFacebookLogin();
+
+    }
+
+    private void initFacebookLogin() {
         FacebookSdk.fullyInitialize();
         AppEventsLogger.activateApp(getApplication());
 
@@ -65,10 +70,9 @@ public class MainActivity extends AppCompatActivity {
 
         LoginButton loginButton = findViewById(R.id.login_button);
         loginButton.setReadPermissions(Collections.singletonList(EMAIL));
-        // If you are using in a fragment, call loginButton.setFragment(this);
 
         // Callback registration
-        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+        /*loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 Log.d("SUCCESS", "Success");
@@ -83,8 +87,7 @@ public class MainActivity extends AppCompatActivity {
             public void onError(@NonNull FacebookException exception) {
                 Log.d("ERROR", exception.getMessage());
             }
-        });
-
+        });*/
     }
 
     @Override
