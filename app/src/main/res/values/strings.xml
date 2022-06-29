@@ -10,7 +10,7 @@
     <string name="content_twitter_icon">Twitter icon</string>
     <string name="hello">Hello!</string>
     <string name="second_activity_label">Second Activity</string>
-    <string name="facebook_app_id">1234</string>
+    <string name="facebook_app_id">771320800704130</string>
     <string name="fb_login_protocol_scheme">fb1234</string>
-    <string name="facebook_client_token">56789</string>
+    <string name="facebook_client_token">78b8fc4f3133ac8842bcbb26a47169bd</string>
 </resources>
