@@ -1,27 +1,36 @@
 package com.leonooore.loginapp;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SecondActivity extends AppCompatActivity {
+import com.facebook.login.LoginManager;
 
-    private String val;
+public class SecondActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_activity);
 
-        val = getIntent().getStringExtra("USER_NAME");
+        String val = getIntent().getStringExtra("USER_NAME");
+
+        TextView viewTextHello = findViewById(R.id.viewTextHello);
+
+        viewTextHello.setText(String.format("Hello %s!", val));
+        
+        Button btnLogout = findViewById(R.id.btnLogout);
+
+        btnLogout.setOnClickListener(view -> {
+            LoginManager.getInstance().logOut();
+            startActivity(new Intent(SecondActivity.this, MainActivity.class));
+            finish();
+        });
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Toast.makeText(this, "Hello" + " " + val + "!", Toast.LENGTH_SHORT).show();
-    }
 }
 
 
