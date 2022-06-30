@@ -32,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String EMAIL = "email";
 
-    private Intent intent;
-
     private CallbackManager callbackManager;
 
     @Override
@@ -50,16 +48,15 @@ public class MainActivity extends AppCompatActivity {
             enteredName = user.getText().toString();
             enteredPassword =  password.getText().toString();
 
-            intent = new Intent(this, SecondActivity.class).putExtra("USER_NAME",enteredName);
-
             if(enteredName.equals(USER_ADMIN) && enteredPassword.equals(PASSWORD_ADMIN)) {
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class).putExtra("USER_NAME",enteredName);
                 startActivity(intent);
                 finish();
             } else
                 Toast.makeText(this, "Failed, try again or sign with social media", Toast.LENGTH_SHORT).show();
         });
 
-        initFacebookLogin();
+       initFacebookLogin();
 
     }
 
